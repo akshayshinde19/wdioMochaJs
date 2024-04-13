@@ -4,20 +4,21 @@ module.exports = new class productDescPage{
 
     get priceXpath(){
         //span[normalize-space()='1,999']
+        //span[normalize-space()='2,588']
         return $("//div[@id='corePriceDisplay_desktop_feature_div']//span[@class='a-price-whole']");
     }
 
 
     //a[@title='Add to Cart']
     get addToCartXPath(){
-        return $("//input[@id='add-to-cart-button']");
+        return $("//input[@value='Add to Cart']");
     }
 
     //a[@href='/cart?ref_=sw_gtc']
     //a[@class='a-button-text']//*[contains(text(),'Go to')]")
     //div[@data-cy='title-recipe']//*[contains(text(),'NOOSY')]
     get goToCartXpath(){
-        return $("//div[@id='sw-atc-actions-buy-box-sign-in']//span[@class='a-button-inner']/a[@class='a-button-text' or contains(text(),'Go to Cart')]");
+        return $("//div[@id='sw-atc-buy-box']//span[@class='a-button-inner']/a[@class='a-button-text' or contains(text(),'Go to Cart')]");
     }
 
     async addProductToCartAndReturnThePrice(parentwinId){

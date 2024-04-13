@@ -1,0 +1,2 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Sat Apr 13 19:57:31 IST 2024","Sat Apr 13 19:58:01 IST 2024","30704","","This is the test suite for placing order from homepage","","","","TC to verify placing order from homepage",""

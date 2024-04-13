@@ -10,19 +10,23 @@ module.exports = new class cartPage{
     get cartPriceXpath(){
 
         //span[@id='sc-subtotal-amount-buybox']//span[@class='currencyINR']
-
+//span[@class='a-price sw-subtotal-amount']//span[@class='a-price-whole']
         return $("//span[@id='sc-subtotal-amount-buybox']//span[@class='a-size-medium a-color-base sc-price sc-white-space-nowrap']");
 
     }
 
     async getFinalPriceInCart(prodPrice){
-      //await expectChai(await this.cartPriceXpath.getText().to.equal(prodPrice));    
-      //  expect(await this.cartPriceXpath.getText()).to.equal(prodPrice);  
         
-        //assert.equal(await this.cartPriceXpath.getText(), prodPrice);
+        // expectChai(await this.tottalPriceFromCart.getText().trim()).to.equal("  "+priceFromPdp+".00");
 
-       // await expect($button).toBeDisplayed()
-        await expect((await this.cartPriceXpath.getText()).toHaveText(prodPrice));
+
+        let finalPriceInCart =await this.cartPriceXpath.getText();    
+        
+        console.log("prodPrice Price = " + prodPrice);
+        console.log("finalPriceInCart Price = " + finalPriceInCart);
+        
+        await expect(this.cartPriceXpath).toHaveText(prodPrice+".00");
+
     }
 
 
